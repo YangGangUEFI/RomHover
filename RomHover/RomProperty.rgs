@@ -1,0 +1,39 @@
+HKCR
+{
+	RomHover.RomProperty.1 = s 'RomProperty Class'
+	{
+		CLSID = s '{8b22c0a0-8ad5-4a48-94cb-1360a3d43dfa}'
+	}
+	RomHover.RomProperty = s 'RomProperty Class'
+	{
+		CLSID = s '{8b22c0a0-8ad5-4a48-94cb-1360a3d43dfa}'
+		CurVer = s 'RomHover.RomProperty.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {8b22c0a0-8ad5-4a48-94cb-1360a3d43dfa} = s 'RomProperty class'
+		{
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{b7f225a2-8488-4289-80f1-87dca8f13a38}'
+			Version = s '1.0'
+		}
+	}
+
+    NoRemove .efi = s 'UEFIDriverTitle'
+    {
+        NoRemove shellex
+        {
+            NoRemove {00021500-0000-0000-C000-000000000046} = s '{8b22c0a0-8ad5-4a48-94cb-1360a3d43dfa}'
+        }
+    }
+	
+    NoRemove UEFIDriverTitle
+    {
+   	DefaultIcon = s '%MODULE%,-205'
+    }
+
+}

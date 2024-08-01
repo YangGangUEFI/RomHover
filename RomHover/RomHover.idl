@@ -1,0 +1,36 @@
+// RomHover.idl : IDL source for RomHover
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (RomHover.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(60668e13-20d2-47ab-953e-faf98cf54347),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IRomProperty : IDispatch
+{
+};
+[
+	uuid(b7f225a2-8488-4289-80f1-87dca8f13a38),
+	version(1.0),
+]
+library RomHoverLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(8b22c0a0-8ad5-4a48-94cb-1360a3d43dfa)
+	]
+	coclass RomProperty
+	{
+		[default] interface IRomProperty;
+	};
+};
+
+import "shobjidl.idl";
