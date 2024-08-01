@@ -105,6 +105,32 @@ HRESULT CRomProperty::GetInfoTip(DWORD dwFlags, LPWSTR* ppwszTip)
 		Magic = EFI_IMAGE_NT_OPTIONAL_HDR64_MAGIC;
 		tempstr = _T("IA64(IPF 64bit)");
 		break;
+
+	case EFI_IMAGE_MACHINE_LOONGARCH32:
+		Magic = Hdr.Pe32.OptionalHeader.Magic;
+		tempstr = _T("LoongArch 32bit");
+		break;
+
+	case EFI_IMAGE_MACHINE_LOONGARCH64:
+		Magic = Hdr.Pe32.OptionalHeader.Magic;
+		tempstr = _T("LoongArch 64bit");
+		break;
+
+	case EFI_IMAGE_MACHINE_RISCV32:
+		Magic = Hdr.Pe32.OptionalHeader.Magic;
+		tempstr = _T("RISC-V 32bit");
+		break;
+
+	case EFI_IMAGE_MACHINE_RISCV64:
+		Magic = Hdr.Pe32.OptionalHeader.Magic;
+		tempstr = _T("RISC-V 64bit");
+		break;
+
+	case EFI_IMAGE_MACHINE_RISCV128:
+		Magic = Hdr.Pe32.OptionalHeader.Magic;
+		tempstr = _T("RISC-V 128bit");
+		break;
+
 	default:
 		//
 		// For unknow Machine field, use Magic in optional Header
